@@ -80,4 +80,13 @@ bot.launch().then(() => console.log('🚀 Бот запущен! Жду фото
 
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
+
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
+const http = require('http');
+
+http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Bot is alive!');
+}).listen(process.env.PORT || 3000, () => {
+    console.log('📡 Будильник запущен');
+});
