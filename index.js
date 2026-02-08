@@ -50,7 +50,7 @@ bot.on('photo', async (ctx) => {
             console.log(`Найдено: ${source} -> ${link}`);
 
      
-            const isMarket = /wildberries|aliexpress|Instagram|supercheap|Alibaba/.test(link.toLowerCase());
+            const isMarket = /wildberries|ozon|aliexpress|Instagram|supercheap|Alibaba/.test(link.toLowerCase());
 
             if (isMarket && link.startsWith('https')) {
                 finalResult.push(`🛍 <b>${source}</b>: <a href="${link}">${title}</a>`);
